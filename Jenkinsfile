@@ -18,7 +18,7 @@ pipeline {
         }
        
         stage ("Test") {
-            agent {docker {image 'alpine' args '-u=\"root\"'}}
+            
             steps {
                 sh 'mkdir build'
                 sh 'cd build'

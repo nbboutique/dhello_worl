@@ -19,10 +19,10 @@ pipeline {
         stage ("Test") {
             
             steps {
-                sh 'mkdir build'
-                sh 'cd build'
-                sh 'cmake -G"Visual Studio 14 2015 Win64" ..'
-                sh 'cmake --build . '
+//                 sh 'mkdir build'
+//                 sh 'cd build'
+//                 sh 'cmake -G"Visual Studio 14 2015 Win64" ..'
+//                 sh 'cmake --build . '
             }
         }
     }

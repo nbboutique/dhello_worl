@@ -17,9 +17,9 @@ pipeline {
                     reuseNode true
                 }
             }
-//             steps {
-// 		    echo "Building... ${BUILD_NUMBER}"
-//                 echo "Build completed"
+            steps {
+		    echo "Building... ${BUILD_NUMBER}"
+                echo "Build completed"
 // 		sh cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/admin-local/Desktop/hello_world
 // 		cmake --build /home/admin-local/Desktop/hello_world/cmake-build-debug --target hello_world -- -j 1
 //                 cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/Projects/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
@@ -28,14 +28,14 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            when {
-                environment name: 'RUN_TESTS', value: 'true'
-            }
-            steps {
-                hello_world 'InSearchPath'
-            }
-        }
+//         stage('Test') {
+//             when {
+//                 environment name: 'RUN_TESTS', value: 'true'
+//             }
+//             steps {
+//                 hello_world 'InSearchPath'
+//             }
+//         }
 
 //         stage('Analyse') {
 //             when {
@@ -58,3 +58,4 @@ pipeline {
 //         }
 	}
 
+}

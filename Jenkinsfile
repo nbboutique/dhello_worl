@@ -1,5 +1,8 @@
 pipeline {
 	agent any
+	git branch: 'main',
+                    credentialsId: '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',
+                    url: 'https://github.com/nbboutique/hello_world.git'
 
 
 	parameters {

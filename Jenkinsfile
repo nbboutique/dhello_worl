@@ -12,7 +12,23 @@ pipeline {
         stage('Build') {
             steps {
 //                 cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/Projects/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
-                cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]
+//                 cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]
+		    cmake {
+		    cmakeInstallation('InSearchPath')
+		    generator('Unix Makefiles')
+		    cleanBuild()
+		    sourceDir('src')
+		    buildDir('target')
+		    args('foo')
+		    args('bar')
+		    buildToolStep {
+			vars('KEY', 'VALUE')
+			useCmake()
+		    }
+		    buildToolStep {
+			useCmake(false)
+		    }
+		}
             }
         }
 

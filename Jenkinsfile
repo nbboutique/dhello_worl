@@ -21,6 +21,7 @@ pipeline {
 //                 }
 //             }
             steps {
+		    cmakeBuild buildDir: 'cmake-gtest/build', buildType: 'Debug', generator: 'Unix Makefiles', installation: 'InSearchPath', sourceDir: 'cmake-gtest/src/'
 		    echo "Building... ${BUILD_NUMBER}"
                 echo "Build completed"
 // 		sh cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/admin-local/Desktop/hello_world
@@ -36,7 +37,7 @@ pipeline {
 //                 environment name: 'RUN_TESTS', value: 'true'
 //             }
 //             steps {
-//                 hello_world 'InSearchPath'
+//                 cmake-gtest 'InSearchPath'
 //             }
 //         }
 

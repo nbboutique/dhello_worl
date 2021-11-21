@@ -1,8 +1,8 @@
 pipeline {
 	agent any
-	git branch: 'main',
-                    credentialsId: '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',
-                    url: 'https://github.com/nbboutique/hello_world.git'
+// 	git branch: 'main',
+//                     credentialsId: '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',
+//                     url: 'https://github.com/nbboutique/hello_world.git'
 
 
 	parameters {
@@ -13,13 +13,13 @@ pipeline {
 
 	stages {
         stage('Build') {
-		agent {
-                docker {
-                    image 'lab4-jenkins:1'
-                    // Run the container on the node specified at the top-level of the Pipeline, in the same workspace, rather than on a new node entirely:
-                    reuseNode true
-                }
-            }
+// 		agent {
+//                 docker {
+//                     image 'lab4-jenkins:1'
+//                     // Run the container on the node specified at the top-level of the Pipeline, in the same workspace, rather than on a new node entirely:
+//                     reuseNode true
+//                 }
+//             }
             steps {
 		    echo "Building... ${BUILD_NUMBER}"
                 echo "Build completed"

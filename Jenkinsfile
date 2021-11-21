@@ -10,9 +10,16 @@ pipeline {
 
 	stages {
         stage('Build') {
-            steps {
-		    echo "Building... ${BUILD_NUMBER}"
-                echo "Build completed"
+		agent {
+                docker {
+                    image 'lab4-jenkins:1'
+                    // Run the container on the node specified at the top-level of the Pipeline, in the same workspace, rather than on a new node entirely:
+                    reuseNode true
+                }
+            }
+//             steps {
+// 		    echo "Building... ${BUILD_NUMBER}"
+//                 echo "Build completed"
 // 		sh cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/admin-local/Desktop/hello_world
 // 		cmake --build /home/admin-local/Desktop/hello_world/cmake-build-debug --target hello_world -- -j 1
 //                 cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/Projects/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'

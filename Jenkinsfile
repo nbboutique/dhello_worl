@@ -18,6 +18,7 @@ pipeline {
         stage("Build") {
             steps {
                 cmake arguments: 
+			cmakeBuild buildDir: 'build', installation: 'InSearchPath'
                 '-DCMAKE_TOOLCHAIN_FILE=~/Projects/vcpkg/scripts/buildsystems/vcpkg.cmake', 
                                        installation: 'InSearchPath'
                 cmakeBuild buildType: 'Release', cleanBuild: true, 

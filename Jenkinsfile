@@ -21,14 +21,14 @@ pipeline {
             }
         }
 
-//         stage('Test') {
-//             when {
-//                 environment name: 'RUN_TESTS', value: 'true'
-//             }
-//             steps {
-//                 ctest 'InSearchPath'
-//             }
-//         }
+        stage('Test') {
+            when {
+                environment name: 'RUN_TESTS', value: 'true'
+            }
+            steps {
+                hello_world 'InSearchPath'
+            }
+        }
 
 //         stage('Analyse') {
 //             when {

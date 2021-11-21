@@ -12,7 +12,6 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building... ${BUILD_NUMBER}"
-                cmakeBuild(installation: 'InSearchPath')
                 echo "Build completed"
             }
         }

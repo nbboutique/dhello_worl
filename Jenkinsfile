@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
 // 		sh cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/admin-local/Desktop/hello_world
-		cmake --build /home/admin-local/Desktop/hello_world/cmake-build-debug --target hello_world -- -j 1
+// 		cmake --build /home/admin-local/Desktop/hello_world/cmake-build-debug --target hello_world -- -j 1
 //                 cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/Projects/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
 //                 cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]
 		    
